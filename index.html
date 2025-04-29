@@ -4,9 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adam Haroon | Portfolio</title>
-  <link rel="stylesheet" href="/css/master.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      scroll-behavior: smooth;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/adamai.webp') no-repeat center center/cover;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0.2em 0;
+    }
+    header h2 {
+      font-weight: 300;
+      font-size: 1.5em;
+      color: #38bdf8;
+    }
+    header p {
+      max-width: 600px;
+      font-size: 1em;
+      margin: 1em auto;
+    }
+    .btn-group a {
+      text-decoration: none;
+      color: #0f172a;
+      background-color: #38bdf8;
+      padding: 0.8em 1.5em;
+      margin: 0.5em;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    .btn-group a:hover {
+      background-color: #0ea5e9;
+    }
+    section {
+      padding: 4em 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .projects, .skills {
+      display: grid;
+      gap: 2em;
+    }
+    .project, .skill {
+      background-color: #1e293b;
+      padding: 1.5em;
+      border-radius: 12px;
+    }
+    .project h3, .skill h3 {
+      margin-top: 0;
+      color: #38bdf8;
+    }
+    .project p, .skill p {
+      margin-bottom: 0;
+    }
+    .project img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 1em;
+    }
+    #contact {
+      text-align: center;
+    }
+    #contact a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -75,7 +151,16 @@
     <p>🔗 <a href="https://www.linkedin.com/in/adam-haroon-6a1050a1" target="_blank">LinkedIn Profile</a></p>
   </section>
 
-  <script src="/js/main.js">
+  <script>
+    // Smooth scroll highlight
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
   </script>
 </body>
 </html>
